@@ -36,7 +36,7 @@ Public Class _1_Menu
         End If
     End Sub
 
-    Private Sub BtnMenu_Click(sender As Object, e As EventArgs) Handles BtnMenu.Click
+    Private Sub BtnMenu_Click(sender As Object, e As EventArgs)
         If PanelMenu.Width = 220 Then
             TimerOcultarMenu.Enabled = True
         ElseIf PanelMenu.Width = 60 Then
@@ -66,5 +66,42 @@ Public Class _1_Menu
         Me.WindowState = FormWindowState.Normal
         BtnRestaurar.Visible = False
         BtnMaximizar.Visible = True
+    End Sub
+
+    Private Sub AbrirFormEnPanel(ByVal Formhijo As Object)
+        If Me.PanelContenedor.Controls.Count > 0 Then Me.PanelContenedor.Controls.RemoveAt(0)
+        Dim fh As Form = TryCast(Formhijo, Form)
+        fh.TopLevel = False
+        fh.FormBorderStyle = FormBorderStyle.None
+        fh.Dock = DockStyle.Fill
+        Me.PanelContenedor.Controls.Add(fh)
+        Me.PanelContenedor.Tag = fh
+        fh.Show()
+    End Sub
+
+    Private Sub _1_Menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub PanelContenedor_Paint_1(sender As Object, e As PaintEventArgs) Handles PanelContenedor.Paint
+
+    End Sub
+    Private Sub AbrirFormularioEnPanel(ByVal Formhijo As Object)
+        If Me.PanelContenedor.Controls.Count > 0 Then Me.PanelContenedor.Controls.RemoveAt(0)
+        Dim fh As Form = TryCast(Formhijo, Form)
+        fh.TopLevel = False
+        fh.FormBorderStyle = FormBorderStyle.None
+        fh.Dock = DockStyle.Fill
+        Me.PanelContenedor.Controls.Add(fh)
+        Me.PanelContenedor.Tag = fh
+        fh.Show()
+    End Sub
+
+    Private Sub BtnProductos_Click(sender As Object, e As EventArgs) Handles BtnProductos.Click
+        AbrirFormularioEnPanel(FrmProductos)
+    End Sub
+
+    Private Sub BtnVentas_Click(sender As Object, e As EventArgs) Handles BtnVentas.Click
+        AbrirFormularioEnPanel(FrmVentas)
     End Sub
 End Class
