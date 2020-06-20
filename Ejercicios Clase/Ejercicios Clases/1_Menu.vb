@@ -102,6 +102,5 @@ Public Class _1_Menu
     End Sub
 
     Private Sub BtnVentas_Click(sender As Object, e As EventArgs) Handles BtnVentas.Click
-        AbrirFormularioEnPanel(FrmVentas)
     End Sub
 End Class
