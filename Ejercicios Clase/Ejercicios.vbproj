@@ -79,10 +79,28 @@
     <Compile Include="Ejercicios Clases\1_Menu.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ejercicios Tareas\MenuPrincipal.Designer.vb">
-      <DependentUpon>MenuPrincipal.vb</DependentUpon>
+    <Compile Include="Ejercicios Clases\ArreglosVectores.Designer.vb">
+      <DependentUpon>ArreglosVectores.vb</DependentUpon>
     </Compile>
-    <Compile Include="Ejercicios Tareas\MenuPrincipal.vb">
+    <Compile Include="Ejercicios Clases\ArreglosVectores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ejercicios Clases\Funciones.Designer.vb">
+      <DependentUpon>Funciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ejercicios Clases\Funciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ejercicios Clases\MenuClases.Designer.vb">
+      <DependentUpon>MenuClases.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ejercicios Clases\MenuClases.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ejercicios Tareas\MenuTareas.Designer.vb">
+      <DependentUpon>MenuTareas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ejercicios Tareas\MenuTareas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.vb">
@@ -119,11 +137,20 @@
     <EmbeddedResource Include="Ejercicios Clases\1_Menu.resx">
       <DependentUpon>1_Menu.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ejercicios Clases\ArreglosVectores.resx">
+      <DependentUpon>ArreglosVectores.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ejercicios Clases\FrmProductos.resx">
       <DependentUpon>FrmProductos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ejercicios Tareas\MenuPrincipal.resx">
-      <DependentUpon>MenuPrincipal.vb</DependentUpon>
+    <EmbeddedResource Include="Ejercicios Clases\Funciones.resx">
+      <DependentUpon>Funciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ejercicios Clases\MenuClases.resx">
+      <DependentUpon>MenuClases.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ejercicios Tareas\MenuTareas.resx">
+      <DependentUpon>MenuTareas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
