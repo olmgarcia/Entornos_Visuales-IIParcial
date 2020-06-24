@@ -194,4 +194,8 @@ Public Class BolsaSolidaria
         ToolTip.ToolTipTitle = "Entrega"
         ToolTip.ToolTipIcon = ToolTipIcon.Info
     End Sub
+
+    Private Sub DGReportes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGReportes.CellContentClick
+
+    End Sub
 End Class
