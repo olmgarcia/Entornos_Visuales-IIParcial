@@ -103,6 +103,12 @@
     <Compile Include="Ejercicios Clases\MenuClases.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Ejercicios Tareas\BolsaSolidaria.Designer.vb">
+      <DependentUpon>BolsaSolidaria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ejercicios Tareas\BolsaSolidaria.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Ejercicios Tareas\MenuTareas.Designer.vb">
       <DependentUpon>MenuTareas.vb</DependentUpon>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ejercicios Clases\MenuClases.resx">
       <DependentUpon>MenuClases.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ejercicios Tareas\BolsaSolidaria.resx">
+      <DependentUpon>BolsaSolidaria.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ejercicios Tareas\MenuTareas.resx">
       <DependentUpon>MenuTareas.vb</DependentUpon>
