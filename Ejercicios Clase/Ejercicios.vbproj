@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="conexion.vb" />
+    <Compile Include="conexionFactura.vb" />
     <Compile Include="EjemploDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -127,10 +128,10 @@
     <Compile Include="Ejercicios Tareas\MenuTareas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Examen\Ejercicio.Designer.vb">
-      <DependentUpon>Ejercicio.vb</DependentUpon>
+    <Compile Include="Examen\Factura.Designer.vb">
+      <DependentUpon>Factura.vb</DependentUpon>
     </Compile>
-    <Compile Include="Examen\Ejercicio.vb">
+    <Compile Include="Examen\Factura.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.vb">
@@ -162,6 +163,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="TiendaDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TiendaDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Ejercicios Clases\1_Menu.resx">
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ejercicios Tareas\MenuTareas.resx">
       <DependentUpon>MenuTareas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examen\Factura.resx">
+      <DependentUpon>Factura.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -220,6 +229,17 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="TiendaDataSet.xsc">
+      <DependentUpon>TiendaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TiendaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TiendaDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TiendaDataSet.xss">
+      <DependentUpon>TiendaDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
