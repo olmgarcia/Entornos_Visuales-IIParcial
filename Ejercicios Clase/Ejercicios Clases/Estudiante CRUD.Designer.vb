@@ -38,12 +38,14 @@ Partial Class Estudiante_CRUD
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DTG_Registros = New System.Windows.Forms.DataGridView()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.BtnBuscar = New System.Windows.Forms.Button()
         Me.BtnSalir = New System.Windows.Forms.Button()
         Me.BtnLimpiar = New System.Windows.Forms.Button()
         Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnGuardar = New System.Windows.Forms.Button()
-        Me.BtnBuscar = New System.Windows.Forms.Button()
+        Me.cmbCodigoClase = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DTG_Registros, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,6 +54,8 @@ Partial Class Estudiante_CRUD
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.cmbCodigoClase)
+        Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.CmbSexo)
         Me.GroupBox1.Controls.Add(Me.TxtEdad)
         Me.GroupBox1.Controls.Add(Me.TxtSegundoApellido)
@@ -67,7 +71,7 @@ Partial Class Estudiante_CRUD
         Me.GroupBox1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(12, 47)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(567, 226)
+        Me.GroupBox1.Size = New System.Drawing.Size(567, 249)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos del Estudiante"
@@ -76,9 +80,9 @@ Partial Class Estudiante_CRUD
         '
         Me.CmbSexo.FormattingEnabled = True
         Me.CmbSexo.Items.AddRange(New Object() {"F", "M"})
-        Me.CmbSexo.Location = New System.Drawing.Point(426, 156)
+        Me.CmbSexo.Location = New System.Drawing.Point(426, 142)
         Me.CmbSexo.Name = "CmbSexo"
-        Me.CmbSexo.Size = New System.Drawing.Size(121, 25)
+        Me.CmbSexo.Size = New System.Drawing.Size(125, 25)
         Me.CmbSexo.TabIndex = 11
         '
         'TxtEdad
@@ -119,7 +123,7 @@ Partial Class Estudiante_CRUD
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(307, 164)
+        Me.Label4.Location = New System.Drawing.Point(307, 150)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(40, 17)
         Me.Label4.TabIndex = 5
@@ -205,6 +209,15 @@ Partial Class Estudiante_CRUD
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Operaciones"
         '
+        'BtnBuscar
+        '
+        Me.BtnBuscar.Location = New System.Drawing.Point(33, 154)
+        Me.BtnBuscar.Name = "BtnBuscar"
+        Me.BtnBuscar.Size = New System.Drawing.Size(158, 37)
+        Me.BtnBuscar.TabIndex = 5
+        Me.BtnBuscar.Text = "Buscar"
+        Me.BtnBuscar.UseVisualStyleBackColor = True
+        '
         'BtnSalir
         '
         Me.BtnSalir.Location = New System.Drawing.Point(33, 247)
@@ -250,14 +263,26 @@ Partial Class Estudiante_CRUD
         Me.BtnGuardar.Text = "Guardar"
         Me.BtnGuardar.UseVisualStyleBackColor = True
         '
-        'BtnBuscar
+        'cmbCodigoClase
         '
-        Me.BtnBuscar.Location = New System.Drawing.Point(33, 154)
-        Me.BtnBuscar.Name = "BtnBuscar"
-        Me.BtnBuscar.Size = New System.Drawing.Size(158, 37)
-        Me.BtnBuscar.TabIndex = 5
-        Me.BtnBuscar.Text = "Buscar"
-        Me.BtnBuscar.UseVisualStyleBackColor = True
+        Me.cmbCodigoClase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbCodigoClase.FormattingEnabled = True
+        Me.cmbCodigoClase.Items.AddRange(New Object() {"IF-325", "IF-326"})
+        Me.cmbCodigoClase.Location = New System.Drawing.Point(426, 190)
+        Me.cmbCodigoClase.Margin = New System.Windows.Forms.Padding(2)
+        Me.cmbCodigoClase.Name = "cmbCodigoClase"
+        Me.cmbCodigoClase.Size = New System.Drawing.Size(125, 25)
+        Me.cmbCodigoClase.TabIndex = 17
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(307, 193)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(96, 17)
+        Me.Label7.TabIndex = 16
+        Me.Label7.Text = "Codigo Clase"
         '
         'Estudiante_CRUD
         '
@@ -302,4 +327,6 @@ Partial Class Estudiante_CRUD
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents CmbSexo As ComboBox
     Friend WithEvents BtnBuscar As Button
+    Friend WithEvents cmbCodigoClase As ComboBox
+    Friend WithEvents Label7 As Label
 End Class
