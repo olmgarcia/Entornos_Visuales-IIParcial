@@ -73,6 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="conexion.vb" />
+    <Compile Include="EjemploDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EjemploDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Ejercicios Clases\1_Menu.Designer.vb">
       <DependentUpon>1_Menu.vb</DependentUpon>
     </Compile>
@@ -83,6 +89,12 @@
       <DependentUpon>ArreglosVectores.vb</DependentUpon>
     </Compile>
     <Compile Include="Ejercicios Clases\ArreglosVectores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ejercicios Clases\Estudiante CRUD.Designer.vb">
+      <DependentUpon>Estudiante CRUD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ejercicios Clases\Estudiante CRUD.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ejercicios Clases\Funciones.Designer.vb">
@@ -152,6 +164,9 @@
     <EmbeddedResource Include="Ejercicios Clases\ArreglosVectores.resx">
       <DependentUpon>ArreglosVectores.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ejercicios Clases\Estudiante CRUD.resx">
+      <DependentUpon>Estudiante CRUD.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ejercicios Clases\FrmProductos.resx">
       <DependentUpon>FrmProductos.vb</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +193,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="EjemploDataSet.xsc">
+      <DependentUpon>EjemploDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EjemploDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EjemploDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EjemploDataSet.xss">
+      <DependentUpon>EjemploDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
