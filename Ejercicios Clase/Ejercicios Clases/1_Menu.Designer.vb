@@ -49,12 +49,12 @@ Partial Class _1_Menu
         Me.PanelBarraTitulo.SuspendLayout()
         Me.PanelMenu.SuspendLayout()
         CType(Me.BtnMenu, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelContenedor.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelBarraTitulo
         '
         Me.PanelBarraTitulo.BackColor = System.Drawing.Color.Blue
-        Me.PanelBarraTitulo.Controls.Add(Me.BtnRestaurar)
         Me.PanelBarraTitulo.Controls.Add(Me.BtnMinimizar)
         Me.PanelBarraTitulo.Controls.Add(Me.BtnMaximizar)
         Me.PanelBarraTitulo.Controls.Add(Me.BtnCerrar)
@@ -70,7 +70,7 @@ Partial Class _1_Menu
         Me.BtnRestaurar.FlatAppearance.BorderSize = 0
         Me.BtnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnRestaurar.Image = CType(resources.GetObject("BtnRestaurar.Image"), System.Drawing.Image)
-        Me.BtnRestaurar.Location = New System.Drawing.Point(1064, 6)
+        Me.BtnRestaurar.Location = New System.Drawing.Point(844, -12)
         Me.BtnRestaurar.Name = "BtnRestaurar"
         Me.BtnRestaurar.Size = New System.Drawing.Size(25, 25)
         Me.BtnRestaurar.TabIndex = 5
@@ -305,6 +305,7 @@ Partial Class _1_Menu
         '
         'PanelContenedor
         '
+        Me.PanelContenedor.Controls.Add(Me.BtnRestaurar)
         Me.PanelContenedor.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelContenedor.Location = New System.Drawing.Point(220, 40)
         Me.PanelContenedor.Name = "PanelContenedor"
@@ -326,6 +327,7 @@ Partial Class _1_Menu
         Me.PanelBarraTitulo.ResumeLayout(False)
         Me.PanelMenu.ResumeLayout(False)
         CType(Me.BtnMenu, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelContenedor.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

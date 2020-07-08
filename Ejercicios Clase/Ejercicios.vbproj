@@ -128,10 +128,28 @@
     <Compile Include="Ejercicios Tareas\MenuTareas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Examen\Factura.Designer.vb">
-      <DependentUpon>Factura.vb</DependentUpon>
+    <Compile Include="Examen\Cliente.Designer.vb">
+      <DependentUpon>Cliente.vb</DependentUpon>
     </Compile>
-    <Compile Include="Examen\Factura.vb">
+    <Compile Include="Examen\Cliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examen\Productos.Designer.vb">
+      <DependentUpon>Productos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Examen\Productos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examen\Ventas.Designer.vb">
+      <DependentUpon>Ventas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Examen\Ventas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examen\MenuPrincipal.Designer.vb">
+      <DependentUpon>MenuPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Examen\MenuPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.vb">
@@ -168,6 +186,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TiendaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="TiendaMessiDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TiendaMessiDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Ejercicios Clases\1_Menu.resx">
@@ -197,8 +220,17 @@
     <EmbeddedResource Include="Ejercicios Tareas\MenuTareas.resx">
       <DependentUpon>MenuTareas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Examen\Factura.resx">
-      <DependentUpon>Factura.vb</DependentUpon>
+    <EmbeddedResource Include="Examen\Cliente.resx">
+      <DependentUpon>Cliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examen\Productos.resx">
+      <DependentUpon>Productos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examen\Ventas.resx">
+      <DependentUpon>Ventas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examen\MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -240,7 +272,20 @@
     <None Include="TiendaDataSet.xss">
       <DependentUpon>TiendaDataSet.xsd</DependentUpon>
     </None>
+    <None Include="TiendaMessiDataSet.xsc">
+      <DependentUpon>TiendaMessiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TiendaMessiDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TiendaMessiDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TiendaMessiDataSet.xss">
+      <DependentUpon>TiendaMessiDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Examen\Script_ExamenIIParcial.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -1,0 +1,166 @@
+﻿create database Tienda
+go
+
+create schema factura
+go
+
+use Ejemplo
+go
+create table factura.cliente(
+	idCliente int primary key not null,
+	nombre varchar(25),
+	apellido varchar(25),
+	direccion varchar(50),
+)
+
+create table factura.producto(
+	idProducto int primary key not null,
+	nombreProducto varchar(40),
+	descripcion varchar(50)
+)
+
+create table factura.Venta(
+	idVenta int primary key not null,
+	fechaVenta date,
+	precio int,
+	cantidad int,
+	idCliente int foreign key references factura.cliente(idCliente),
+	idProducto int foreign key references factura.producto(idProducto)
+)
+----------------------------------------------------------------------------
+insert into factura.cliente values('001','Martin','Gonzales','Comayagua, Comayagua')
+insert into factura.cliente values('012','Olman','Garcia','Lamani, Comayagua')
+insert into factura.cliente values('485','Marcos','Yaroide','Tegucigalpa, Francisco Morazan')
+
+insert into factura.Venta  values('428','2015-07-07','1500','2','012','504')
+insert into factura.Venta  values('357','2017-08-04','2100','4','485','506')
+
+insert into factura.producto  values('504','Balon','Mundial 2006')
+insert into factura.producto  values('506','Tacos','Mundial 1998')
+
+delete from factura.Venta where idProducto  = 506
+-------------------------------------------------------------------------------
+
+
+-------------------------TABLA PRODUCTO----------------------------------------
+create procedure ingresarProducto @idProducto int, @nombreProducto varchar(40), @descripcion varchar(50)
+as begin
+insert into factura.producto(idProducto,nombreProducto,descripcion) values (@idProducto,@nombreProducto,@descripcion)
+end
+exec ingresarProducto 5,'Tenis','Marca NIKE'
+
+create procedure consultarProductos 
+as begin
+select pr.idProducto,pr.nombreProducto as 'Nombre Producto',pr.descripcion from factura.producto as pr
+end
+exec consultarProductos
+
+create procedure consultarProducto(@idproducto int)
+as begin
+select pr.idProducto,pr.nombreProducto as 'Nombre Producto',pr.descripcion from factura.producto as pr
+where pr.idProducto = @idproducto
+end
+exec consultarProducto 504
+
+create procedure actualizarProducto (@idProducto int,@nombreProducto varchar(40),@descripcion varchar(50))
+as begin
+update factura.producto set nombreProducto=@nombreProducto, descripcion = @descripcion 
+where idProducto = @idProducto
+end
+exec actualizarProducto 504,'Camisa','Autografiada'
+
+create procedure eliminarProducto(@idproducto int)
+as begin
+delete from factura.producto where idProducto = @idproducto
+end
+exec eliminarProducto 506
+
+select *from factura.producto 
+
+
+
+
+--------------------------TABLA CLIENTE----------------------------------------
+create procedure ingresarCliente @idCliente int, @nombre varchar(25), @apellido varchar(25), @direccion varchar(50)
+as begin
+insert into factura.cliente(idCliente,nombre,apellido,direccion) values (@idCliente, @nombre, @apellido, @direccion)
+end
+
+execute ingresarCliente 20,'Oscar','Medina','Comayagua'
+execute ingresarCliente 21,'Maria','Cabrera','Siguatepeque'
+execute ingresarCliente 25,'Juan','Lopez','Taulabe'
+execute ingresarCliente 28,'Alberto','Reyes','Tegucigalpa'
+execute ingresarCliente 35,'Alex','Gonzales','Cortes'
+
+select *from factura.cliente 
+
+create procedure consultarClientes 
+as begin
+select cl.idCliente, concat(cl.nombre ,' ',cl.apellido) as 'Nombre Completo',cl.direccion from factura.cliente as cl 
+end
+exec consultarClientes
+
+create procedure consultarCliente(@idCliente int)
+as begin
+select cl.idCliente, concat(cl.nombre ,' ',cl.apellido) as 'Nombre Completo',cl.direccion from factura.cliente as cl 
+where cl.idCliente = @idCliente
+end
+exec consultarCliente 28
+
+create procedure actualizarCliente(@idCliente int,@nombre varchar(25),@apellido varchar(25),@direccion varchar(50))
+as begin
+	update factura.cliente set nombre = @nombre, apellido=@apellido, direccion=@direccion  
+	where idCliente = @idCliente
+end
+exec actualizarCliente 1,'Juan','Medina','Taulabe, Comayagua'
+
+create procedure eliminarCliente(@idcliente int)
+as begin
+delete from factura.cliente where idCliente = @idcliente
+end
+exec eliminarCliente 28
+
+
+
+--------------------------TABLA VENTAS-----------------------------------------
+create procedure ingresarVenta @idventa int,@fechaVenta date,@precio int,@cantidad int,@idCliente int,@idProducto int
+as begin
+insert into factura.Venta(idVenta,fechaVenta,precio,cantidad,idCliente,idProducto) values
+(@idVenta,@fechaVenta,@precio,@cantidad,@idCliente,@idProducto)
+end
+
+create procedure consultarVentas 
+as begin
+select concat(cl.nombre ,' ',cl.apellido) as 'Nombre Completo', pr.nombreProducto, v.cantidad, v.precio,v.fechaVenta from factura.Venta as v
+inner join factura.cliente as cl on v.idCliente= cl.idCliente  
+inner join factura.producto as pr on v.idProducto =  pr.idProducto 
+end
+exec consultarVentas
+
+create procedure consultaVenta(@nombre varchar(25))
+as begin
+		select concat(cl.nombre ,' ',cl.apellido) as 'Nombre Completo', pr.nombreProducto, v.cantidad, v.precio,v.fechaVenta from factura.Venta as v
+		inner join factura.cliente as cl on cl.idCliente = v.idCliente
+		inner join factura.producto as pr on pr.idProducto = v.idProducto
+where cl.nombre = @nombre
+end
+exec consultaVenta 'Eduardo'
+
+create procedure actualizarVentas (@idventa int,@precio int,@cantidad int,@idProducto int)
+as begin
+	update factura.Venta set precio = @precio, cantidad=@cantidad, idProducto=@idProducto  
+	where idVenta = @idventa
+end
+exec actualizarVentas 12,520,8,9
+
+create procedure eliminarVenta(@idventa int)
+as begin
+delete from factura.Venta where idVenta = @idventa
+end 
+exec eliminarVenta 5
+
+-------------------------------------------------------------------------------
+
+select * from factura.cliente 
+select * from factura.producto 
+select * from factura.Venta 
