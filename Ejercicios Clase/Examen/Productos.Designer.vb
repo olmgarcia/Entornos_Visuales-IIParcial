@@ -92,7 +92,7 @@ Partial Class Productos
         '
         'BtnEliminar
         '
-        Me.BtnEliminar.Location = New System.Drawing.Point(31, 149)
+        Me.BtnEliminar.Location = New System.Drawing.Point(33, 149)
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.Size = New System.Drawing.Size(158, 37)
         Me.BtnEliminar.TabIndex = 2
@@ -101,7 +101,7 @@ Partial Class Productos
         '
         'BtnModificar
         '
-        Me.BtnModificar.Location = New System.Drawing.Point(31, 101)
+        Me.BtnModificar.Location = New System.Drawing.Point(33, 101)
         Me.BtnModificar.Name = "BtnModificar"
         Me.BtnModificar.Size = New System.Drawing.Size(158, 37)
         Me.BtnModificar.TabIndex = 1
@@ -110,7 +110,7 @@ Partial Class Productos
         '
         'BtnGuardar
         '
-        Me.BtnGuardar.Location = New System.Drawing.Point(31, 56)
+        Me.BtnGuardar.Location = New System.Drawing.Point(33, 52)
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(158, 37)
         Me.BtnGuardar.TabIndex = 0

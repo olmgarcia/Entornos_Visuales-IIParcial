@@ -39,4 +39,8 @@
     Private Sub BtnClientes_Click(sender As Object, e As EventArgs) Handles BtnClientes.Click
         AbrirFormularioEnPanel(Cliente)
     End Sub
+
+    Private Sub PanelContenedor_Paint_1(sender As Object, e As PaintEventArgs) Handles PanelContenedor.Paint
+
+    End Sub
 End Class
